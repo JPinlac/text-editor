@@ -5,6 +5,10 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // import reducer form './Reducers/reducer';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+injectTapEventPlugin();
 
 const store = createStore(function(state = { test: "Test" }, action) {
     return state;
@@ -14,8 +18,10 @@ store.subscribe( () => {
 });
 
 ReactDOM.render(
-  <Provider store={store}>
-      <App />
-  </Provider>,
-  document.getElementById('root')
+    <MuiThemeProvider>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </MuiThemeProvider>,
+    document.getElementById('root')
 );

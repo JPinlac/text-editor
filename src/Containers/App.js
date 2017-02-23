@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import AppBar from '../Components/AppBar';
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello!</h1>
+        <div>
+            <AppBar />
+            <h1>Ughh</h1>
+        </div>
     );
   }
 }
